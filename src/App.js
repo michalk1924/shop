@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Jewelery from './components/Jewelery/Jewelery.jsx';
+import Electronics from './components/Electronics/Electronics.jsx';
+import { Link, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Link to="/jewelery">Jewelery</Link>
+        <Link to="/electronics">Electronics</Link>
+      </div>
+
+      <Routes>
+        <Route path="/jewelery" element={<Jewelery />} />
+        <Route path="/electronics" element={<Electronics />} />
+      </Routes>
     </div>
   );
 }

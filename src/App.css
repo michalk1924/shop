@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+.prodContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 1em;
+}
+
+.prod{
+  height: 285px;
+  margin-top: 20px;
+  margin-right: 10px;
+  border-radius: 0 0 10px 10px;
+  padding: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid #eaecee;
+  border-top: 3px solid #eadeee;
+}
+
+.prod img{
+  height: 70%;
+  object-fit: cover;
+  align-self: center;
+}
+
+.prod p{
+  margin: 0;
+  padding-right: 10px;
+}
+
+.price{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8622ae;
+}
