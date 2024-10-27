@@ -7,7 +7,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <div>
+      <div className='header'>
         <Link to="/jewelery">Jewelery</Link>
         <Link to="/electronics">Electronics</Link>
       </div>
