@@ -47,25 +47,26 @@ function Page({ catgory }) {
 
     return (
         <div>
-            {!loading && <div>
-                <h2>{catgory.toUpperCase()}</h2>
-                <div className={styles.prodContainer}>
-                    {itemsArray.map((product, index) =>
-                        <div key={index} className={styles.prod}>
-                            <h4>{product.title}</h4>
-                            <p>Price: ${product.price}</p>
-                            <img src={product.image} alt={product.title} />
-                        </div>
-                    )
-                    }
-                </div>
-            </div>}
-            {loading &&
+            {loading ? (
                 <div>
                     <ClipLoader color="orange" loading={loading} size={50} />
-                </div>}
+                </div>
+            ) : (
+                <div>
+                    <h2>{catgory.toUpperCase()}</h2>
+                    <div className={styles.prodContainer}>
+                        {itemsArray.map((product, index) => (
+                            <div key={index} className={styles.prod}>
+                                <h4>{product.title}</h4>
+                                <p>Price: ${product.price}</p>
+                                <img src={product.image} alt={product.title} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default Page
