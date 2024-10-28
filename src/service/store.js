@@ -7,8 +7,6 @@ export async function getItemsFromFakestore(catgory){
 }
 
 export async function getItems(catgory){
-    const herf = `http://localhost:${DBPORT}/${catgory}`;
-    console.log(herf);
-    return fetch(herf)
+    return fetch(`http://localhost:${DBPORT}/${catgory}`)
     .then(res=>res.json());
 }
