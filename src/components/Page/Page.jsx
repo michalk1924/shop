@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getItems } from '../../service/store';
+import { getItems, getItemsFromFakestore } from '../../service/store';
 import styles from './styles.module.css'
-import { getFromStorage, saveToStorage } from '../../service/lib/storage';
+import { getFromStorage, saveToStorage } from '../lib/storage';
 import { ClipLoader } from 'react-spinners';
-
-const oneMinute = 60 * 1000;
+import { ONEMINUTE } from '../lib/consts';
+import { Categories } from '../../App';
 
 function Page({ catgory }) {
 
@@ -19,7 +19,7 @@ function Page({ catgory }) {
             if (savedTimefromStorage) {
                 const storedTime = parseInt(savedTimefromStorage, 10);
                 const currentTime = Date.now();
-                if (currentTime - storedTime > oneMinute) {
+                if (currentTime - storedTime > ONEMINUTE) {
                     await getItemsWithFetch();
                 } else {
                     setItemsArray(getFromStorage(catgory));
@@ -34,11 +34,16 @@ function Page({ catgory }) {
         fetchData();
 
         async function getItemsWithFetch() {
-            getItems(catgory).then(data => {
+            if (catgory == Categories.BOOKS) {
+                const data = await getItems(catgory);
                 setItemsArray(data);
                 saveToStorage(catgory, data);
             }
-            );
+            else {
+                const data = await getItemsFromFakestore(catgory);
+                setItemsArray(data);
+                saveToStorage(catgory, data);
+            }
             const savedTime = Date.now();
             saveToStorage(`savedTime${catgory}`, savedTime);
         }
