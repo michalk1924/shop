@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getItems } from '../service/store';
+import { getItems } from '../../service/store';
 import styles from './styles.module.css'
 
 function Items({catgory}) {
@@ -16,7 +16,7 @@ function Items({catgory}) {
         <div className={styles.prodContainer}>
             {itemsArray.map((product, index) =>
                 <div key={index} className={styles.prod}>
-                    <h3>{product.title}</h3>
+                    <h4>{product.title}</h4>
                     <p>Price: ${product.price}</p>
                     <img src={product.image} alt={product.title} />
                 </div>

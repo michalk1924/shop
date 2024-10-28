@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { Link, Routes, Route } from 'react-router-dom';
-import Items from './components/Items.jsx';
+import Items from './components/Items/Items.jsx';
+import Home from './components/Home/Home.jsx';
 
 function App() {
   return (
@@ -14,10 +14,11 @@ function App() {
       </div>
 
       <Routes>
+        <Route path="/" element={<Home/>} />
         <Route path="/jewelery" element={<Items catgory={'jewelery'} />} />
-        <Route path="/electronics" element={<Items catgory={'electronics'} /> } />
-        <Route path="/men's clothing" element={<Items catgory={`men's clothing`} /> } />
-        <Route path="/women's clothing" element={<Items catgory={`women's clothing`} /> } />
+        <Route path="/electronics" element={<Items catgory={'electronics'} />} />
+        <Route path="/men's clothing" element={<Items catgory={`men's clothing`} />} />
+        <Route path="/women's clothing" element={<Items catgory={`women's clothing`} />} />
       </Routes>
     </div>
   );
