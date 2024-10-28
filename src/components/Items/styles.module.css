@@ -85,3 +85,23 @@
     }
   }
   
+  #description{
+    width: 100%;
+    height: 100%;
+    color: #666;
+    transition: color 0.3s ease;
+    &:hover{
+      color: #333;
+    }
+    &:focus{
+      outline: none;
+    }
+    &:active{
+      color: #333;
+    }
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: 300;
+  }
