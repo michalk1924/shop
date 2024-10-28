@@ -7,10 +7,8 @@ function Page({catgory}) {
     const [itemsArray, setItemsArray] = useState([]);
 
     useEffect(() => {
-        debugger
         getItems(catgory).then(data => setItemsArray(data));
     }, [catgory])
-
 
     return (
         <div className={styles.prodContainer}>
