@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getItems } from '../../service/store';
 import styles from './styles.module.css'
 
-function Items({catgory}) {
+function Page({catgory}) {
 
     const [itemsArray, setItemsArray] = useState([]);
 
@@ -26,4 +26,4 @@ function Items({catgory}) {
     )
 }
 
-export default Items
+export default Page

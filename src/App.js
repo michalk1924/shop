@@ -1,6 +1,6 @@
 import './App.css';
 import { Link, Routes, Route } from 'react-router-dom';
-import Items from './components/Items/Items.jsx';
+import Page from './components/Page/Page.jsx';
 import Home from './components/Home/Home.jsx';
 
 const Categories = Object.freeze({
@@ -22,10 +22,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/jewelery" element={<Items catgory={Categories.JEWELERY} />} />
-        <Route path="/electronics" element={<Items catgory={Categories.ELECTRONICS} />} />
-        <Route path="/men's clothing" element={<Items catgory={Categories.MENSCLOTHING} />} />
-        <Route path="/women's clothing" element={<Items catgory={Categories.WOMENSCLOTHING} />} />
+        <Route path="/jewelery" element={<Page catgory={Categories.JEWELERY} />} />
+        <Route path="/electronics" element={<Page catgory={Categories.ELECTRONICS} />} />
+        <Route path="/men's clothing" element={<Page catgory={Categories.MENSCLOTHING} />} />
+        <Route path="/women's clothing" element={<Page catgory={Categories.WOMENSCLOTHING} />} />
       </Routes>
     </div>
   );
