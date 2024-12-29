@@ -16,7 +16,7 @@ Welcome to the **Shop** project! This is a simple, responsive web application th
 - **HTML** – Structure of the web page.
 
 ## Setup Instructions
-1. **Clone the repository:**
+ **Clone the repository:**
    ```bash
    git clone https://github.com/michalk1924/shop.git
    cd shop
